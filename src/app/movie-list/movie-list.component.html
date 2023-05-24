@@ -1,0 +1,11 @@
+<h3 *ngIf="!movieList.length; else movie">
+  Il n'y a pas de films actuellement
+</h3>
+<ng-template #movie>
+  <ul>
+    <app-movie-item
+      *ngFor="let movieItem of movieList"
+      [movie]="movieItem"
+    ></app-movie-item>
+  </ul>
+</ng-template>

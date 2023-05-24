@@ -10,7 +10,8 @@ const hitman = new Movie(
   'Hitman le Cobra',
   'Godfrey Ho',
   'https://m.media-amazon.com/images/M/MV5BNDY2NTgwMTMtNTVkMy00MGY3LWJiMjEtNzljNTA1Mjg2ZjRjXkEyXkFqcGdeQXVyMzU0NzkwMDg@._V1_FMjpg_UY502_.jpg',
-  2.6)
+  2.6,
+  true)
 
 // TODO pourquoi readonly ne marche pas
 export const MOVIE_LIST: Movie[] = [
