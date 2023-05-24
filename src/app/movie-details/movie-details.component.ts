@@ -4,19 +4,17 @@ import { MOVIE_LIST } from '../models/movie.mock';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-movie-details', // slug-case, kebad-case
+  selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
 
-
-
 export class MovieDetailsComponent {
 
-  title: string = "CinéNavet"
+  title: string = "CinéNavet";
   movieList: Movie[] = MOVIE_LIST;
-  movieDetails: Movie = this.movieList[1]
-  favourite: boolean = false
+  movieDetails: Movie = this.movieList[1];
+  favourite: boolean = false;
 
   constructor(private toastr: ToastrService) { }
 
