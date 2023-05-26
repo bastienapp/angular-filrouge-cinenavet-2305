@@ -1,5 +1,7 @@
 <li>
-  <span [ngClass]="{ isFavourite: movie.favourite }"
-    >{{ movie.title }} {{ movie.favourite ? "♥" : "♡" }}</span
+  <a
+    [routerLink]="['/movies', movie.id]"
+    [ngClass]="{ isFavourite: movie.favourite }"
+    >{{ movie.title }} {{ movie.favourite ? "♥" : "♡" }}</a
   >
 </li>
