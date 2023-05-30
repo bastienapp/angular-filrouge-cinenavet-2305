@@ -1,0 +1,32 @@
+<form #movieForm="ngForm" (ngSubmit)="createMovie()">
+  <p>Submitted: {{ movieForm.submitted }}</p>
+  <p>Valid: {{ movieForm.valid }}</p>
+  <p>Invalid: {{ movieForm.invalid }}</p>
+  <label>
+    <span>Title: </span>
+    <input
+      #inputTitle="ngModel"
+      name="title"
+      type="text"
+      [(ngModel)]="movie.title"
+      required
+      minlength="2"
+    />
+  </label>
+  <!-- Si y'a des erreurs, les afficher -->
+  <!-- pristine, dirty, touched, untouched (blur, focus) -->
+  <div *ngIf="inputTitle.touched && inputTitle.errors !== null">
+    <!-- Si l'erreur est required -->
+    <p class="error" *ngIf="inputTitle.errors?.['required'] !== undefined">
+      Title is required
+    </p>
+    <!-- Si l'erreur est minlength -->
+    <p class="error" *ngIf="inputTitle.errors?.['minlength'] !== undefined">
+      Title should contains at least two characters
+    </p>
+    <!-- Fin si -->
+  </div>
+  <br /><br />
+  <button type="submit">Create</button>
+</form>
+<p>{{ inputTitle.errors | json }}</p>
