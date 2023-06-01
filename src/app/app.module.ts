@@ -12,6 +12,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { FormsModule } from '@angular/forms';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationItemComponent } from './navigation-item/navigation-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     MovieDetailsComponent,
     MovieListComponent,
     MovieItemComponent,
-    MovieFormComponent
+    MovieFormComponent,
+    NavigationComponent,
+    NavigationItemComponent
   ],
   imports: [
     BrowserModule,
