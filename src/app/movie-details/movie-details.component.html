@@ -13,4 +13,15 @@
   <div *ngIf="!movieDetails">Ce film n'existe pas !</div>
   <br />
   <a routerLink="/movies">Retour à la liste des films</a>
+  <h3>Donner votre avis</h3>
+  <app-movie-comment-form
+    (newCommentEmitter)="receiveNewComment($event)"
+  ></app-movie-comment-form>
+  <h3>Commentaires:</h3>
+  <ul>
+    <li *ngFor="let comment of commentList">
+      <h4>{{ comment.username }}</h4>
+      <p>{{ comment.content }}</p>
+    </li>
+  </ul>
 </div>

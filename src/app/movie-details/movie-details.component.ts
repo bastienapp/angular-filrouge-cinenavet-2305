@@ -3,6 +3,7 @@ import { Movie } from '../models/movie.model';
 import { MOVIE_LIST } from '../models/movie.mock';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MovieComment } from '../models/movie-comment.model';
 
 @Component({
   selector: 'app-movie-details',
@@ -16,6 +17,14 @@ export class MovieDetailsComponent implements OnInit {
   movieList: Movie[] = MOVIE_LIST;
   movieDetails: Movie | undefined;
   favourite: boolean = false;
+
+  commentList: MovieComment[] = [
+    {
+      username: "Michel",
+      content: "C'est trop bien",
+    },
+    new MovieComment("Brenda", "Le film de ma vie")
+  ]
 
   // ne faire que de l'injection de dépendance dans le constructeur
   constructor(
@@ -42,5 +51,9 @@ export class MovieDetailsComponent implements OnInit {
     } else {
       this.toastr.warning(`${this.movieDetails?.title} est déjà dans vos favoris`)
     }
+  }
+
+  receiveNewComment(newComment: MovieComment) {
+    this.commentList.push(newComment);
   }
 }

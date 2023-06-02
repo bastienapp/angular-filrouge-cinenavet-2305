@@ -1,0 +1,15 @@
+<form #createComment="ngForm" (ngSubmit)="onSubmit()">
+  <label>
+    <span>Votre nom</span>
+    <br />
+    <input type="text" name="username" [(ngModel)]="username" required="" />
+  </label>
+  <br />
+  <label>
+    <span>Votre commentaire</span>
+    <br />
+    <textarea name="comment" [(ngModel)]="comment" required=""></textarea>
+  </label>
+  <br />
+  <button type="submit" [disabled]="createComment.invalid">Envoyer</button>
+</form>
